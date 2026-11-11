@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en"> <!--nisam siguran ako je ovo greška, ali je bilo lang="hr", normalno bude lang="en"-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sajam domaćih proizvoda</title> <!--falio zatvorni </title>-->
+</head>
+<body>
+
+    <h1>Sajam domaćih proizvoda</h1>
+    <hr>
+
+    <p>Na sajmu u subotu izlažu proizvođači iz Daruvara i okolice. Za pitanja pogledaj <a href="#kontakt">kontakt</a> na dnu stranice.</p> <!--ovdje je nakon # kontakt bio pisan velikim slovom a dolje je id malim slovom-->
+
+    <h2>Izlagači</h3>
+    <ul type="square">
+        <li>Med i medenjaci</li>
+        <li>Sir i vrhnje</li>
+        <li>Kobasice i čvarci</li>
+    </ul>
+
+    <h2>Satnica</h2>
+    <table border="1" width="100%" cellpadding="8px"> <!--falio je px nakon broja -->
+        <tr>
+            <th>Vrijeme</th>
+            <th>Događaj</th>
+        </tr>
+        <tr>
+            <td>10:00</td> <!--rowspan = 2 je smetao tablici-->
+            <td>Otvorenje sajma</td>
+        </tr>
+        <tr>
+            <td>12:00</td>
+            <td>Nastup tamburaša</td>
+        </tr>
+        <tr>
+            <td>14:00</td>
+            <td>Proglašenje najboljeg proizvoda</td>
+        </tr>
+    </table>
+
+    <h2>Gdje je sajam?</h2>
+    <img src="slike/plan_grada.png" alt="Plan središta Daruvara" usemap="#plan"> <!--falio je # prije imena mape-->
+    <map name="plan">
+        <area shape="rect" coords="50,250,200,340" href="index.html#kontakt" alt="Turistički ured" title="Turistički ured">
+    </map>
+
+    <p><img src="slike/toplice.png" width="300"></p> <!--falio je slike/ ispred imena datoteke slike-->
+
+    <h3 id="kontakt">Kontakt</h3>
+    <p>Prijave za izlagače: <a href="mailto:sajam@example.com">pošalji e-mail</a></p> <!--falio je "-->
+
+    <p><a href = "index.html">Natrag na početnu</a></p> <!--neznam ako je ovo greška što ne postoji, ali evo, reda radi-->
+</body>
+</html>

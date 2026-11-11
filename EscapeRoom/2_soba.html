@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2. Soba</title>
+</head>
+
+<body>
+    
+<h1 style = "font-size: 100px;">... .--- .. .-- .--.</h1>
+    <div class = "center">
+        <h1 class = "tekst">Morse code je meni fora, a Vama?</h1>
+        <button onclick = "Hint()">Hint</button>
+        <input type = "text" id = "codeInput" placeholder = "Unesite kod...">
+        <button onclick = "valjaniKod()">Submit</button>
+        
+        <h4 id = "tekst" class = "tekst"></h4>
+
+        <img id = "skrivenKvadrat" src = "rect.png" alt = "rect" usemap = "#rectMap" style = "display: none;">
+        <h5 id = "hintTekst" class = "hintTekst"></h5>
+
+        <map name = rectMap>
+            <area alt="rect" href="3_soba.html" coords="18,218,333,150" shape="rect">
+        </map>
+    </div>
+</body>
+
+    <script>
+        const kod = "SJIWP";
+
+        function valjaniKod(){
+            const uneseniKod = document.getElementById("codeInput").value.trim().toUpperCase();
+
+            if(uneseniKod === kod){
+                document.getElementById("skrivenKvadrat").style.display = "block";
+                document.getElementById("tekst").textContent = "Točno.";
+            }
+            else{
+                document.getElementById("tekst").textContent = "Netočan kod.";
+                document.getElementById("skrivenKvadrat").style.display = "none";
+            }
+        }
+
+        function Hint(){
+            document.getElementById("hintTekst").textContent = "Negdje se na stranici nalazi skriveni header...";
+        }
+    </script>
+
+    <style>
+        body{
+            text-align: center;
+            background-color: black;
+            font-family: Arial, sans-serif;
+        }
+
+        .center{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #skrivenKvadrat{
+            display: block;
+            width: 350px;
+            height: auto;
+            margin: 20px auto 0;
+        }
+
+        .tekst{
+            color: #cccccc;
+        }
+
+        .hintTekst{
+            color: #555555;
+        }
+
+        input{
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            background-color: #4b4b4b;
+            color: #ffffff;
+        }
+
+        button{
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            background-color: #555555;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        button:hover{
+            background-color: #3f3f3f;
+            color: #cccccc;
+        }
+        
+    </style>
+</html>

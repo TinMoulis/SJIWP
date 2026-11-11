@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablice</title>
+    <link rel = "stylesheet" href = "../style.css">
+</head>
+
+<body>
+
+    <h4><a href = "../index.html">Povratak na početnu stranicu.</a></h4>
+
+    <p><br>Ako želiš saznati više o tablicama, evo ti <a href = "../vazno_o_tablicama.pdf" target = "_blank">pdf</a></p>
+
+    <h1>Jednostavna tablica</h1>
+
+    <table border = "1" width = "100%" cellpadding = "10px">
+
+        <th colspan = "5">Dani u tjednu</th>
+
+        <tr>
+            <td style = "text-align: center;" colspan = "2">Ponedjeljak</td>
+            <td rowspan = "2">Srijeda</td>
+            <td>Cetvrtak</td>
+            <td>Petak</td>
+        </tr>
+        <tr>
+            <td>Ponedjeljak</td>
+            <td>Utorak</td>
+            <td>Cetvrtak</td>
+            <td>Petak</td>
+        </tr>
+    </table>
+
+    <br><br><br><br>
+
+    <table border = "1">
+
+        <tr>
+            <th colspan = 5>naslov tablice</th>
+        </tr>
+
+        <tr>
+            <td><br>&nbsp;</td>
+            <td>1.<br>stupac</td>
+            <td>2.<br>stupac</td>
+            <td>3.<br>stupac</td>
+            <td>4.<br>stupac</td>
+        </tr>
+
+        <tr>
+            <td>1. red</td>
+            <td bgcolor = "orange" rowspan = 3>&nbsp;</td>
+            <td bgcolor = "green" rowspan = 2>&nbsp;</td>
+            <td bgcolor = "white">&nbsp;</td>
+            <td bgcolor = "red">&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>2. red</td>
+            <td bgcolor = "yellow" colspan = 2></td>
+        </tr>
+        
+        <tr>
+            <td>3. red</td>
+            <td bgcolor = "purple" colspan = 3></td>
+        </tr>
+
+        <caption style = "caption-side: bottom;">ovo je opis tablice</caption>
+
+    </table>
+
+</body>
+
+</html>

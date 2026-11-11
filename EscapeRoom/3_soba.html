@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3. Soba</title>
+</head>
+
+<body>
+    <div class = "center">
+        <h1 id = "pitanje" class = "tekst">Koji se oblik prikazao u prvoj sobi?</h1>
+        <input type = "text" id = "codeInput" placeholder = "Unesite oblik...">
+        <button onclick = "valjaniKod()">Submit</button>
+        <h4 id = "tekst" class = "tekst"></h4>
+        <p id = "novi_kod1" class = "p" style = "display: none;">Finalni kod je:</p>
+        <p id = "novi_kod2" class = "p" style = "display: none;">SJIWP</p>
+    </div>
+
+    <script>
+        const kod1 = "DIJAMANT";
+        const kod12 = "ROMB";
+        let prviKodUnesen = false;
+        const kod2 = "PRAVOKUTNIK";
+
+        function valjaniKod(){
+            const uneseniKod = document.getElementById("codeInput").value.trim().toUpperCase();
+
+            const tekst = document.getElementById("tekst");
+            const pitanje = document.getElementById("pitanje");
+            const noviKod1 = document.getElementById("novi_kod1");
+            const noviKod2 = document.getElementById("novi_kod2");
+
+            if (uneseniKod === "SJIWP"){
+                window.location.href = "kraj.html";
+                return;
+            }
+
+            if (!prviKodUnesen){
+                if (uneseniKod === kod1 || uneseniKod === kod12){
+                    tekst.textContent = "Točno.";
+                    noviKod1.style.display = "block";
+                    pitanje.textContent = "A koji se oblik prikazao u drugoj sobi?";
+                    prviKodUnesen = true;
+                }
+                else{
+                    tekst.textContent = "Netočno.";
+                }
+            }
+            else{
+                if (uneseniKod === kod2){
+                    tekst.textContent = "Točno.";
+                    noviKod2.style.display = "block";
+                    pitanje.textContent = "Evo koda!";
+                }
+                else{
+                    tekst.textContent = "Netočno.";
+                }
+            }
+        }
+
+        function Hint(){
+            document.getElementById("hintTekst").textContent = "Negdje se na stranici nalazi skriveni header...";
+        }
+
+    </script>
+</body>
+
+    <style>
+        body{
+            text-align: center;
+            background-color: black;
+            font-family: Arial, sans-serif;
+        }
+
+        .center{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .p{
+            color:#555555
+        }
+
+        .tekst{
+            color: #cccccc;
+        }
+
+        .hintTekst{
+            color: #555555;
+        }
+
+        input{
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            background-color: #4b4b4b;
+            color: #ffffff;
+        }
+
+        button{
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            background-color: #555555;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        button:hover{
+            background-color: #3f3f3f;
+            color: #cccccc;
+        }
+        
+    </style>
+</html>

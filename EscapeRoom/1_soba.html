@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1. Soba</title>
+</head>
+
+<body>
+    
+    <div class = "center">
+        <h3 id = "header">8764</h3>
+        <div id="skriveniRect"></div>
+
+        <h1 class = "tekst">Pronađite skriveno dugme koje vam otkriva kod kako biste nastavili dalje...</h1>
+
+        <input type = "text" id = "codeInput" placeholder = "Unesite kod...">
+        <button onclick = "valjaniKod()">Submit</button>
+
+        <h4 id = "tekst" class = "tekst"></h4>
+
+        <img id="skrivenoDugme" src="dijamant.png" alt="dijamant" usemap="#diamondMap" style = "display: none">
+        
+        <map name="diamondMap">
+            <area shape="poly" coords="2,59,100,115,196,57,100,1" href="2_soba.html" alt="Skriveno dugme">
+        </map>
+    </div>
+    
+    <script>
+        const kod = "8764";
+        const rect = document.getElementById("skriveniRect");
+        const header = document.getElementById("header");
+
+        function valjaniKod(){
+            const uneseniKod = document.getElementById("codeInput").value;
+
+            if(uneseniKod === kod){
+                document.getElementById("skrivenoDugme").style.display = "block";
+                document.getElementById("tekst").textContent = "Točno.";
+            }
+            else{
+                document.getElementById("tekst").textContent = "Netočan kod.";
+                document.getElementById("skrivenoDugme").style.display = "none";
+            }
+        }
+
+        rect.addEventListener("click", function(){
+            header.style.color = "white";
+        });
+
+        function randomPozicija(){
+            const maxX = window.innerWidth - 60;
+            const maxY = window.innerHeight - 60;
+
+            rect.style.left = Math.random() * maxX + "px";
+            rect.style.top = Math.random() * maxY + "px";
+        }
+
+        randomPozicija();
+    </script>
+</body>
+
+    <style>
+        body{
+            text-align: center;
+            background-color: black;
+            font-family: Arial, sans-serif;
+        }
+
+        .h3{
+            color: transparent;
+        }
+
+        .center{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #skrivenoDugme{
+            display: block;
+            width: 200px;
+            height: auto;
+            margin: 20px auto 0;
+        }
+
+        #skriveniRect{
+            position: fixed;
+            width: 150px;
+            height: 150px;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .tekst{
+            color: #cccccc;
+        }
+
+        input{
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            background-color: #4b4b4b;
+            color: #ffffff;
+        }
+
+        button{
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            background-color: #555555;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        button:hover{
+            background-color: #3f3f3f;
+            color: #cccccc;
+        }
+
+    </style>
+</html>
