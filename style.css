@@ -21,6 +21,7 @@ h2{
     letter-spacing:2px;
     color:#738b38;
     font-family: "Libre Baskerville", sans-serif;
+    text-shadow: 3px 3px 2px #11270f;
 }
 
 h3{
@@ -70,4 +71,12 @@ hr{
     background-color: #dda15e;
     border: 2px solid #bc6c25;
     height: 2px;
+}
+
+.html{
+    font-style: italic;
+}
+
+.css{
+    text-decoration: underline;
 }
